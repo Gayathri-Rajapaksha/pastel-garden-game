@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastel Match Garden 🌸</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-page-container">
+        <nav class="game-nav">
+            <a href="home.html" class="nav-btn">🏠 Home</a>
+            <button id="leaderboard-btn" class="nav-btn">🏆 Scoreboard</button>
+            <button id="game-logout" class="nav-btn logout">🌙 Logout</button>
+        </nav>
+
+        <div class="music-controls">
+            <button id="music-toggle" class="music-btn">🎵 Music On</button>
+            <input type="range" id="volume-slider" min="0" max="100" value="50" class="volume-slider">
+        </div>
+
+        <div class="game-container">
+            <h1>🎀 Pastel Match Garden 🎀</h1>
+            
+            <div class="player-info">
+                <span>Player: <strong id="current-player">Guest</strong></span>
+                <span>Level: <strong id="current-level-display">Easy</strong></span>
+            </div>
+            
+            <div class="stats-board">
+                <div>Round: <span id="round">1</span> 🌟</div>
+                <div>Score: <span id="score">0</span> 💖</div>
+                <div>Time: <span id="time">120</span>s ⏳</div>
+            </div>
+
+            <div class="controls">
+                <select id="level-select" class="game-select">
+                    <option value="easy">Easy (120s, 3 Hearts)</option>
+                    <option value="medium">Medium (90s, 5 Hearts)</option>
+                    <option value="hard">Hard (60s, 7 Hearts)</option>
+                </select>
+                <div class="btn-group">
+                    <button id="start-btn" class="game-action-btn primary">Start 🌈</button>
+                    <button id="pause-btn" class="game-action-btn secondary" disabled>Pause ⏸️</button>
+                    <button id="stop-btn" class="control-btn stop-btn" disabled>Exit 🛑</button>
+                    <button id="heart-btn" class="game-action-btn secondary" disabled>Time (-20) 💕</button>
+                </div>
+                <div id="chances-left">Extra Chances: <span id="chances">3</span></div>
+            </div>
+
+
+
+
+            <div class="grid-container">
+                <div class="grid grid-easy" id="grid"></div>
+                <div id="pause-overlay" class="pause-overlay">
+                    <h2>Game Paused 💤</h2>
+                    <p>Take a deep breath! 🌸</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="leaderboard-modal" class="modal">
+            <div class="modal-content leaderboard-content">
+                <h2>🏆 Scoreboard 🏆</h2>
+                <div class="leaderboard-tabs">
+                    <button class="tab-btn active" data-level="easy">Easy 🌸</button>
+                    <button class="tab-btn" data-level="medium">Medium 🌷</button>
+                    <button class="tab-btn" data-level="hard">Hard 🎀</button>
+                </div>
+                <div id="leaderboard-list" class="leaderboard-list"></div>
+                <button id="close-leaderboard" class="close-btn">Close ✨</button>
+            </div>
+        </div>
+
+        <div id="api-modal" class="modal">
+            <div class="modal-content puzzle-modal-content">
+                <h3 class="puzzle-title">💕 Magic Heart Puzzle 💕</h3>
+                <p style="color: #ff99cc; margin-bottom: 15px; font-weight: 600;">Solve the math to grow +15s!</p>
+                
+                <div class="puzzle-image-container">
+                    <img id="puzzle-image" src="" alt="Heart Puzzle">
+                </div>
+                
+                <div class="puzzle-input-group">
+                    <input type="number" id="puzzle-answer" placeholder="Type answer here..." min="0" max="9">
+                </div>
+                
+                <div class="puzzle-btn-group">
+                    <button id="submit-puzzle" class="puzzle-btn primary">Submit ✨</button>
+                    <button id="close-modal" class="puzzle-btn secondary">Cancel 🌸</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="floating-hearts">
+        <div>💖  💖</div>
+        <div>🌸  🌸</div>
+        <div>💕  💕</div>
+        <div>✨  ✨</div>
+        <div>💖  💖</div>
+        <div>🌸  🌸</div>
+    </div>
+
+    <audio id="bg-music" loop><source src="audio/bg-music.mp3" type="audio/mpeg"></audio>
+    <audio id="flip-sound" preload="auto"><source src="audio/flip.mp3" type="audio/mpeg"></audio>
+    <audio id="match-sound" preload="auto"><source src="audio/match.mp3" type="audio/mpeg"></audio>
+    <audio id="wrong-sound" preload="auto"><source src="audio/wrong.mp3" type="audio/mpeg"></audio>
+    <audio id="win-sound" preload="auto"><source src="audio/win.mp3" type="audio/mpeg"></audio>
+    <audio id="gameover-sound" preload="auto"><source src="audio/gameover.mp3" type="audio/mpeg"></audio>
+    <audio id="click-sound" preload="auto"><source src="audio/click.mp3" type="audio/mpeg"></audio>
+
+    <script src="api.js" charset="utf-8"></script>
+    <script src="auth.js" charset="utf-8"></script>
+    <script src="game.js" charset="utf-8"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - Pastel Garden 🌸</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="home-container">
+        <header class="home-header">
+            <h1>🌸 Welcome, <span id="player-name">Player</span>! 🌸</h1>
+            <button id="logout-btn" class="logout-btn">Logout 🌙</button>
+        </header>
+
+        <div class="slideshow-container">
+            <a class="prev-slide" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next-slide" onclick="plusSlides(1)">&#10095;</a>
+
+            <div class="slide">
+                <img src="slide1.jpg" alt="Candy Landscape">
+                <div class="slide-text">🌸 Match beautiful pastel cards 🌸</div>
+                <button class="slide-play-btn" onclick="window.location.href='game.html'">✨ Play Now ✨</button>
+            </div>
+            <div class="slide">
+                <img src="slide2.jpg" alt="Dreamscape">
+                <div class="slide-text">🌷 Grow your magic memory garden 🌷</div>
+                <button class="slide-play-btn" onclick="window.location.href='game.html'">✨ Play Now ✨</button>
+            </div>
+            <div class="slide">
+                <img src="slide3.jpg" alt="Pink Castle">
+                <div class="slide-text">🎀 Claim the crown on the leaderboard 🎀</div>
+                <button class="slide-play-btn" onclick="window.location.href='game.html'">✨ Play Now ✨</button>
+            </div>
+
+            <div class="dot-container" style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+            </div>
+        </div>
+
+        <section class="instructions-section">
+            <h2>✨ How to Play ✨</h2>
+            <p class="subtitle">Complete the levels to grow your magic garden!</p>
+            
+            <div class="instructions-grid">
+                <div class="instruction-card">
+                    <div class="icon">🌷</div>
+                    <h3>Sign In</h3>
+                    <p>Log in or register to secure your virtual identity and save your best scores to the garden database.</p>
+                </div>
+                <div class="instruction-card">
+                    <div class="icon">🌸</div>
+                    <h3>Find Pairs</h3>
+                    <p>Click the hidden tiles to find matching cute garden items. Match all pairs before the timer runs out!</p>
+                </div>
+                <div class="instruction-card">
+                    <div class="icon">💖</div>
+                    <h3>Magic Heart</h3>
+                    <p>If time is running short, click the Magic Heart to fetch a puzzle from the heart API. Solve it for bonus time!</p>
+                </div>
+                <div class="instruction-card">
+                    <div class="icon">🏆</div>
+                    <h3>Submit Score</h3>
+                    <p>Your highest score for each level is securely saved. Compete with others on the global leaderboard!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2 class="section-title">🌟 Difficulty Levels 🌟</h2>
+            <div class="cards-container">
+                <div class="level-card easy">
+                    <h4>🌸 Easy 🌸</h4>
+                    <p>120 seconds<br>3 Heart Chances</p>
+                </div>
+                <div class="level-card medium">
+                    <h4>🌷 Medium 🌷</h4>
+                    <p>90 seconds<br>5 Heart Chances</p>
+                </div>
+                <div class="level-card hard">
+                    <h4>🎀 Hard 🎀</h4>
+                    <p>60 seconds<br>7 Heart Chances</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2 class="section-title">🏆 Your Best Scores 🏆</h2>
+            <div class="cards-container">
+                <div class="score-card">
+                    <h4>🌸 Easy 🌸</h4>
+                    <p class="score-value" id="best-easy">0</p>
+                </div>
+                <div class="score-card">
+                    <h4>🌷 Medium 🌷</h4>
+                    <p class="score-value" id="best-medium">0</p>
+                </div>
+                <div class="score-card">
+                    <h4>🎀 Hard 🎀</h4>
+                    <p class="score-value" id="best-hard">0</p>
+                </div>
+            </div>
+        </section>
+
+        <button id="start-game-btn" class="start-game-btn">✨ Start Playing ✨</button>
+    </div>
+
+   <div class="floating-hearts">
+        <div>💖💖</div>
+        <div>🌸🌸</div>
+        <div>💕💕</div>
+        <div>✨✨</div>
+        <div>💖💖</div>
+        <div>🌸🌸</div>
+    </div>
+
+    <audio id="bg-music" loop autoplay><source src="audio/bg-music.mp3" type="audio/mpeg"></audio>
+    <audio id="click-sound" preload="auto"><source src="audio/click.mp3" type="audio/mpeg"></audio>
+
+    <script src="api.js" charset="utf-8"></script>
+    <script src="auth.js" charset="utf-8"></script>
+    <script src="home.js" charset="utf-8"></script>
+</body>
+</html>

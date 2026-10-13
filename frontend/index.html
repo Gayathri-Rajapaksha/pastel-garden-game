@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pastel Match Garden 🌸</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box">
+            <h1>🌸 Pastel Garden 🌸</h1>
+            
+            <div class="auth-toggle">
+                <div class="slider" id="toggle-slider"></div>
+                <button id="show-login" class="toggle-btn active">Login 💕</button>
+                <button id="show-register" class="toggle-btn">Register 🌷</button>
+            </div>
+
+            <form id="login-form" class="auth-form">
+                <p class="auth-subtitle">Welcome back! Log in to continue your cute adventure🌸</p>
+                
+                <div class="input-group">
+                    <input type="text" id="login-username" required placeholder="Username">
+                </div>
+                
+                <div class="input-group password-group">
+                    <input type="password" id="login-password" required placeholder="Password">
+                    <span class="toggle-password" onclick="togglePasswordVisibility('login-password', this)">👁️</span>
+                </div>
+                
+                <button type="submit" class="submit-btn">Login 🌈</button>
+            </form>
+
+            <form id="register-form" class="auth-form hidden">
+                <p class="auth-subtitle">Welcome to our cozy world! Create your account and start your magical adventure🌸</p>
+                
+                <div class="input-group">
+                    <input type="text" id="reg-username" required placeholder="Username">
+                </div>
+                <div class="input-group">
+                    <input type="email" id="reg-email" required placeholder="Email">
+                </div>
+                
+                <div class="input-group password-group">
+                    <input type="password" id="reg-password" required placeholder="Password">
+                    <span class="toggle-password" onclick="togglePasswordVisibility('reg-password', this)">👁️</span>
+                </div>
+                
+                <button type="submit" class="submit-btn">Register 🌟</button>
+            </form>
+            
+            <div id="auth-message" class="message"></div>
+        </div>
+    </div>
+
+    <div class="floating-hearts">
+        <div>💖 💖</div>
+        <div>🌸 🌸</div>
+        <div>💕 💕</div>
+        <div>✨ ✨</div>
+        <div>💖 💖</div>
+        <div>🌸 🌸</div>
+    </div>
+
+    <audio id="bg-music" loop autoplay><source src="audio/bg-music.mp3" type="audio/mpeg"></audio>
+    <audio id="click-sound" preload="auto"><source src="audio/click.mp3" type="audio/mpeg"></audio>
+
+    <script src="api.js" charset="utf-8"></script>
+    <script src="auth.js" charset="utf-8"></script>
+
+</body>
+</html>
